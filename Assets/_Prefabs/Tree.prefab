@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6236744506006551529}
   - component: {fileID: 6761564148144193560}
   - component: {fileID: -8014827290434768874}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,10 @@ PrefabInstance:
     - target: {fileID: 1746961173751853091, guid: 3a3aa359900910946ac3054f9bd0010c, type: 3}
       propertyPath: m_Name
       value: Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746961173751853091, guid: 3a3aa359900910946ac3054f9bd0010c, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6983196598287428368, guid: 3a3aa359900910946ac3054f9bd0010c, type: 3}
       propertyPath: m_RootOrder

@@ -63,10 +63,10 @@ public class Farmer : MonoBehaviour
 
 	public void AttackStart()
 	{
-		Debug.Log("Start Farmer Attack");
+
 	}
 	public void AttackStop()
 	{
-		Debug.Log("Stop Farmer Attack");
+
 	}
 }

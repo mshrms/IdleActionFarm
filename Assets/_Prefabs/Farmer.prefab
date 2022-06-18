@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.8768326}
-  m_Center: {x: 0, y: 0, z: -0.061583836}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.21}
 --- !u!54 &2625680329779770278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107,6 +107,7 @@ Transform:
   - {fileID: 5926537373354821109}
   - {fileID: 1559886129947976812}
   - {fileID: 5076033093215022963}
+  - {fileID: 5845946778305227309}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,8 +137,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.95
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -155,7 +156,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed15695592dd1a42a0e5f6af52d49bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTime: 0.8
+  attackTime: 1
+--- !u!1 &7957754684727473980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7630532189280685260}
+  - component: {fileID: 399317572121087730}
+  m_Layer: 7
+  m_Name: FarmerInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7630532189280685260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957754684727473980}
+  m_LocalRotation: {x: -1.0587912e-22, y: 4.2632574e-14, z: 2.2737368e-13, w: 1}
+  m_LocalPosition: {x: 0, y: -0.3, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5809952800803992177}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399317572121087730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957754684727473980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7642467474a0aa04e8980409efb7818b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hayPacks: []
+  maxItems: 40
+  hayPacksVerticalSpacing: 0.3
+  hayPacksHorizontalSpacing: -0.3
+  stackMaxHeight: 10
+  hayPackMoveDuration: 0.6
+  jumpHeight: 0.5
+--- !u!1 &8879626972557494245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5845946778305227309}
+  - component: {fileID: 2141578078308704600}
+  - component: {fileID: 6059157058654521032}
+  m_Layer: 16
+  m_Name: HayPackPickuper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5845946778305227309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8879626972557494245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6176109827172423295}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2141578078308704600
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8879626972557494245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000067055225, z: 0}
+--- !u!114 &6059157058654521032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8879626972557494245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e13c15f6a1241648bb509a3a573adb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 399317572121087730}
 --- !u!1001 &5880710793904845155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -578,6 +688,11 @@ GameObject:
 --- !u!4 &5926537373354821109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a09d1ef18c4f85443803b28cdf40ef70, type: 3}
+  m_PrefabInstance: {fileID: 6176109826668061214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5809952800803992177 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 366175167995203695, guid: a09d1ef18c4f85443803b28cdf40ef70, type: 3}
   m_PrefabInstance: {fileID: 6176109826668061214}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &311830982365878134 stripped

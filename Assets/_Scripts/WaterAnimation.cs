@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -15,6 +13,7 @@ public class WaterAnimation : MonoBehaviour
 
     void AnimateWater()
 	{
-        transform.DOMove(transform.position + moveDirection, waterAnimationSpeed).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        transform.DOMove(transform.position + moveDirection, waterAnimationSpeed)
+            .SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
     }
 }

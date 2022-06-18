@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static EventsNamespace.EventBus;
@@ -7,10 +6,10 @@ public class Sickle : MonoBehaviour
 {
 	public float colliderActivationOffset;
 	private Collider sickleCollider;
+	private MeshRenderer sickleRenderer;
 
 	[SerializeField] private TrailRenderer sickleTrail;
 	private List<Collider> collisionsDuringAttack;
-
 
 	private void OnEnable()
 	{
@@ -27,7 +26,10 @@ public class Sickle : MonoBehaviour
 	void Start()
 	{
 		sickleCollider = GetComponent<Collider>();
+		sickleRenderer = GetComponent<MeshRenderer>();
+
 		sickleCollider.enabled = false;
+		sickleRenderer.enabled = false;
 		sickleTrail.emitting = false;
 
 
@@ -36,6 +38,7 @@ public class Sickle : MonoBehaviour
 
 	void SickleAttackStart()
 	{
+		sickleRenderer.enabled = true;
 		Invoke("StartAttackWithAppliedOffset", colliderActivationOffset);
 	}
 
@@ -49,7 +52,7 @@ public class Sickle : MonoBehaviour
 	{
 		sickleCollider.enabled = false;
 		sickleTrail.emitting = false;
-
+		sickleRenderer.enabled = false;
 
 		collisionsDuringAttack.Clear();
 	}
@@ -57,9 +60,7 @@ public class Sickle : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		bool matched = false;
-
-		matched = IsRepeatingCollision(other);
+		bool matched = IsRepeatingCollision(other);
 
 		if (!matched)
 		{
@@ -70,7 +71,6 @@ public class Sickle : MonoBehaviour
 			if (wheatComponent.isGrowing == false)
 			{
 				wheatComponent.CutWheat();
-				Debug.Log($"Farmer has attacked {other.gameObject.name}");
 			}
 
 		}

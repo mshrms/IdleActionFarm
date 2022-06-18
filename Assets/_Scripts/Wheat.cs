@@ -23,22 +23,22 @@ public class Wheat : MonoBehaviour
 
     public bool isGrowing = false;
 
+
+    public ParticleSystem sparkleParticleSystem;
+    public ParticleSystem wheatCutParticleSystem;
+
+    public int sparkleParticleCount;
+    public int wheatHitParticleCount;
+
+
     private Vector3 startScale;
     private Vector3 startPosition;
     private int currentLife = 3;
 
-    private void OnEnable()
-	{
-        //onGrowthStart += StartGrowth;
-        //onGrowthStop += StopGrowth;
-    }
 
-    private void OnDisable()
-    {
-        //onGrowthStart -= StartGrowth;
-        //onGrowthStop -= StopGrowth;
-    }
-	private void Start()
+    
+
+    private void Start()
 	{
         startScale = wheatMesh.transform.localScale;
         startPosition = wheatMesh.transform.localPosition;
@@ -48,6 +48,10 @@ public class Wheat : MonoBehaviour
 
 	public void CutWheat()
 	{
+        wheatCutParticleSystem.Emit(wheatHitParticleCount);
+
+        transform.DOKill();
+
         onWheatCut?.Invoke();
         hayPackDropper.DropHayPack();
 
@@ -79,7 +83,7 @@ public class Wheat : MonoBehaviour
 	{
         Vector3 meshPosition = startPosition;
 
-        wheatMesh.transform.localScale = new Vector3(startScale.x, 0.05f, startScale.z);
+        wheatMesh.transform.localScale = new Vector3(startScale.x, 0.1f, startScale.z);
         wheatMesh.transform.DOScaleY(startScale.y, growthTime).SetEase(Ease.InOutSine).OnComplete(() =>
 		{
             onGrowthStop?.Invoke();
@@ -94,19 +98,6 @@ public class Wheat : MonoBehaviour
         wheatMesh.transform.localPosition = fromMeshPosition;
 
         wheatMesh.transform.DOLocalMoveY(toY, growthTime).SetEase(Ease.InOutSine);
-
-  //      remainingGrowthTime = growthTime;
-
-        //      while (remainingGrowthTime > 0)
-        //{
-        //          remainingGrowthTime -= Time.deltaTime;
-        //          Debug.Log(remainingGrowthTime);
-        //          yield return null;
-        //}
-
-        //      remainingGrowthTime = 0;
-
-        //      onGrowthStop?.Invoke();
     }
 
     private void StopGrowth()
@@ -120,7 +111,8 @@ public class Wheat : MonoBehaviour
 
         Debug.Log("Growth Ended " + gameObject.name);
 
-        transform.DOKill();
+        wheatMesh.transform.DOShakeScale(shakeDuration, shakeStrength, shakeVibrato * 2, shakeRandomness).SetEase(Ease.OutSine);
 
+        sparkleParticleSystem.Emit(sparkleParticleCount);
     }
 }

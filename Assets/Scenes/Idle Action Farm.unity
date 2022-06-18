@@ -569,7 +569,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 425380834}
   m_Follow: {fileID: 425380834}
   m_Lens:
-    FieldOfView: 20
+    FieldOfView: 22
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -1180,7 +1180,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20
+  field of view: 22
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1737,7 +1737,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: deadZone
-      value: 0.3
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_Pivot.x
@@ -2105,42 +2105,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2003500989, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: attackTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2604058404097497896, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_Size.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3945511943724245333, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_Time
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3945511943724245333, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_Parameters.numCapVertices
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3945511943724245333, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_Parameters.numCornerVertices
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3945511943724245333, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.29227448
-      objectReference: {fileID: 0}
-    - target: {fileID: 6176109826821244983, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: colliderActivationOffset
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 6176109827172423292, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1644608300}
-    - target: {fileID: 6176109827172423292, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: moveSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6176109827172423293, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
       propertyPath: m_Name
       value: Farmer
@@ -2148,18 +2116,6 @@ PrefabInstance:
     - target: {fileID: 6176109827172423295, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6176109827172423295, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6176109827172423295, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6176109827172423295, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6176109827172423295, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2200,10 +2156,6 @@ PrefabInstance:
     - target: {fileID: 6176109827172423295, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9094856389963666963, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}
-      propertyPath: m_Radius
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17c5eb4568035794ea66114f5ce9d46a, type: 3}

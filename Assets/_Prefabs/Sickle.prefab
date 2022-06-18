@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b291096926880f14f98e81d2d78e93bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderActivationOffset: 0.4
+  colliderActivationOffset: 0.5
   sickleTrail: {fileID: 7673069223404394753}
 --- !u!54 &650913981149753442
 Rigidbody:
