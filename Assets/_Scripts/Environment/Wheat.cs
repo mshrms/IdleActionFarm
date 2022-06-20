@@ -7,36 +7,27 @@ using System;
 
 public class Wheat : MonoBehaviour
 {
+    [Header("/// Growth Settings ///")]
+    public float growthTime;
+    public float growingYOffset;
+    public int sparkleParticleCount;
+    [HideInInspector] public bool isGrowing = false;
     public List<Mesh> growStages;
     [SerializeField] private MeshFilter wheatMesh;
-    private HayPackDropper hayPackDropper;
+    private Vector3 startScale;
+    private Vector3 startPosition;
+    private int currentLife = 3;
+    [SerializeField] private ParticleSystem sparkleParticleSystem;
 
-    public float growthTime;
-
+    [Header("/// On Hit Settings ///")]
+    public int wheatHitParticleCount;
     public float shakeIntensity;
     public float shakeDuration;
     public int shakeVibrato;
     public float shakeStrength;
     public float shakeRandomness;
-
-    public float growingYOffset;
-
-    public bool isGrowing = false;
-
-
-    public ParticleSystem sparkleParticleSystem;
-    public ParticleSystem wheatCutParticleSystem;
-
-    public int sparkleParticleCount;
-    public int wheatHitParticleCount;
-
-
-    private Vector3 startScale;
-    private Vector3 startPosition;
-    private int currentLife = 3;
-
-
-    
+    [SerializeField] private ParticleSystem wheatCutParticleSystem;
+    private HayPackDropper hayPackDropper;
 
     private void Start()
 	{
@@ -74,7 +65,6 @@ public class Wheat : MonoBehaviour
     {
         if (isGrowing)
         {
-            Debug.Log("Start Growth " + gameObject.name);
             Growth();
         }
     }
@@ -108,8 +98,6 @@ public class Wheat : MonoBehaviour
         wheatMesh.transform.localPosition = startPosition;
 
         wheatMesh.mesh = growStages[currentLife];
-
-        Debug.Log("Growth Ended " + gameObject.name);
 
         wheatMesh.transform.DOShakeScale(shakeDuration, shakeStrength, shakeVibrato * 2, shakeRandomness).SetEase(Ease.OutSine);
 

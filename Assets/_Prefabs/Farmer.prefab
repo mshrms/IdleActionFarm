@@ -182,7 +182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7957754684727473980}
   m_LocalRotation: {x: -1.0587912e-22, y: 4.2632574e-14, z: 2.2737368e-13, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: -0.1}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5809952800803992177}
@@ -200,13 +200,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7642467474a0aa04e8980409efb7818b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hayPacks: []
-  maxItems: 40
+  maxItems: 20
   hayPacksVerticalSpacing: 0.3
   hayPacksHorizontalSpacing: -0.3
-  stackMaxHeight: 10
-  hayPackMoveDuration: 0.6
-  jumpHeight: 0.5
+  stackMaxHeight: 5
+  hayPackSpeedRange: {x: 0.3, y: 0.6}
+  jumpHeight: 0.8
+  haySellDuration: 0.5
+  sellCooldownTime: 0.1
+  sellPoint: {fileID: 0}
 --- !u!1 &8879626972557494245
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +251,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.8
+  m_Radius: 1
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -0.00000067055225, z: 0}
@@ -769,20 +771,39 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 650913981149753443, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
-      propertyPath: sickleTrail
-      value: 
-      objectReference: {fileID: 529635375883626351}
+      propertyPath: colliderActivationOffset
+      value: 0.475
+      objectReference: {fileID: 0}
     - target: {fileID: 650913981149753446, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
       propertyPath: m_Name
       value: Sickle
       objectReference: {fileID: 0}
+    - target: {fileID: 7673069223404394753, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
+      propertyPath: m_Time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673069223404394753, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673069223404394753, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.19398499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673069223404394753, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
+      value: -0.064128704
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673069223404394753, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
+      value: 0.23990309
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673069223404394753, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
+      value: -0.064128704
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
---- !u!96 &529635375883626351 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 7673069223404394753, guid: 7a196516ef004fd4e9b01a351f0e0f69, type: 3}
-  m_PrefabInstance: {fileID: 7864854362349534830}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8452298160565964668
 PrefabInstance:
   m_ObjectHideFlags: 0

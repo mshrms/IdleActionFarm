@@ -181,7 +181,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.8
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4935,24 +4935,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c00a0b855950d64598ffaca33c069eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  growthTime: 5
+  growingYOffset: -0.31
+  sparkleParticleCount: 10
+  isGrowing: 0
   growStages:
   - {fileID: -1137734806586786226, guid: c5c2cab4ba728ec40878a17825281bbd, type: 3}
   - {fileID: 3267070719955430036, guid: c5c2cab4ba728ec40878a17825281bbd, type: 3}
   - {fileID: -6012910199000166729, guid: c5c2cab4ba728ec40878a17825281bbd, type: 3}
   - {fileID: -8173560599773279575, guid: c5c2cab4ba728ec40878a17825281bbd, type: 3}
   wheatMesh: {fileID: 2315033277980548694}
-  growthTime: 10
+  sparkleParticleSystem: {fileID: 959518972770233287}
+  wheatHitParticleCount: 10
   shakeIntensity: 0.1
   shakeDuration: 0.2
   shakeVibrato: 0
   shakeStrength: 0.2
   shakeRandomness: 30
-  growingYOffset: -0.31
-  isGrowing: 0
-  sparkleParticleSystem: {fileID: 959518972770233287}
   wheatCutParticleSystem: {fileID: 8845760314963807892}
-  sparkleParticleCount: 10
-  wheatHitParticleCount: 10
 --- !u!114 &7712636055586219008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5149,7 +5149,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.6
+      scalar: 0.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2

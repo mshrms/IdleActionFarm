@@ -5,6 +5,8 @@ using static EventsNamespace.EventBus;
 public class Farmer : MonoBehaviour
 {
 	public float attackTime;
+	public int moneyCount;
+
 
     private bool isAttacking = false;
 	private float remainingAttackTime;
