@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static EventsNamespace.EventBus;
 using DG.Tweening;
 
 public class Barn : MonoBehaviour
 {
-	public float scaleModifier;
+	public Vector3 targetScale;
 	public float scaleDuration;
-	private Vector3 startScale;
+
 	[SerializeField] private GameObject barnModelGO;
+	private Vector3 startScale;
+	
 
 	private void Start()
 	{
@@ -30,7 +30,7 @@ public class Barn : MonoBehaviour
 		barnModelGO.transform.DOKill();
 		barnModelGO.transform.localScale = startScale;
 
-		barnModelGO.transform.DOScaleY(scaleModifier, scaleDuration).SetEase(Ease.InOutCubic).OnComplete(() =>
+		barnModelGO.transform.DOScale(targetScale, scaleDuration).SetEase(Ease.InOutCubic).OnComplete(() =>
 		{
 			barnModelGO.transform.DOScale(startScale, scaleDuration).SetEase(Ease.InOutCubic);
 		});

@@ -1,7 +1,6 @@
 using UnityEngine;
 using static EventsNamespace.EventBus;
 using DG.Tweening;
-using System;
 
 public class SellZone : MonoBehaviour
 {
@@ -49,7 +48,6 @@ public class SellZone : MonoBehaviour
 	private void ScaleSellZoneDown()
 	{
 		transform.DOKill();
-
 		transform.DOScale(startScale, scaleDuration).SetEase(Ease.InOutCubic);
 	}
 

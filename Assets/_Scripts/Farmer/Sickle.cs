@@ -5,10 +5,10 @@ using static EventsNamespace.EventBus;
 public class Sickle : MonoBehaviour
 {
 	public float colliderActivationOffset;
-	private Collider sickleCollider;
-	private MeshRenderer sickleRenderer;
 
 	[SerializeField] private TrailRenderer sickleTrail;
+	private Collider sickleCollider;
+	private MeshRenderer sickleRenderer;
 	private List<Collider> collisionsDuringAttack;
 
 	private void OnEnable()

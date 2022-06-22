@@ -7,22 +7,18 @@ public class AnimationStateController : MonoBehaviour
 
 	private void OnEnable()
 	{
-		//RUNNING
 		onRunStart += StartRunningAnimation;
 		onRunStop += StopRunningAnimation;
 
-		//ATTACKING
 		onAttackStart += StartAttackingAnimation;
 		onAttackStop += StopAttackingAnimation;
 	}
 
 	private void OnDisable()
 	{
-		//RUNNING
 		onRunStart -= StartRunningAnimation;
 		onRunStop -= StopRunningAnimation;
 
-		//ATTACKING
 		onAttackStart -= StartAttackingAnimation;
 		onAttackStop -= StopAttackingAnimation;
 	}

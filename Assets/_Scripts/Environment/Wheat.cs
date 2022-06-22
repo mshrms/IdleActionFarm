@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using static EventsNamespace.EventBus;
-using System;
 
 public class Wheat : MonoBehaviour
 {
@@ -94,6 +92,7 @@ public class Wheat : MonoBehaviour
     {
         isGrowing = false;
         currentLife = 3;
+
         wheatMesh.transform.localScale = startScale;
         wheatMesh.transform.localPosition = startPosition;
 

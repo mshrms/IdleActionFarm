@@ -11,6 +11,7 @@ public class FarmerInventory : MonoBehaviour
 	public float hayPacksHorizontalSpacing;
 	public int stackMaxHeight;
 	public List<GameObject> hayPacks;
+
 	private int currentStackHeight;
 	private int currentStackWidth;
 	private Vector3 inventoryOnSpinePos;
@@ -21,9 +22,11 @@ public class FarmerInventory : MonoBehaviour
 	public float jumpHeight;
 	public float haySellDuration;
 	public float sellCooldownTime;
+
 	[SerializeField] private Transform sellPoint;
 	private bool isSelling = false;
 	private float cooldown;
+
 
 	private void OnEnable()
 	{
@@ -43,7 +46,6 @@ public class FarmerInventory : MonoBehaviour
 		inventoryOnSpinePos = transform.localPosition;
 
 		newHayPackPosition = inventoryOnSpinePos;
-		//newHayPackPosition = Vector3.zero;
 
 		currentStackHeight = 0;
 		currentStackWidth = 0;
@@ -91,7 +93,7 @@ public class FarmerInventory : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("Inventory FULL");
+			Debug.Log("Inventory is full");
 			onInventoryFull?.Invoke();
 		}
 	}
@@ -131,7 +133,7 @@ public class FarmerInventory : MonoBehaviour
 		//увеличиваем высоту
 		currentStackHeight++;
 
-		//если текущая высота превышает максимальную высоту колонны, добавить блок уже в новую колонну
+		//если высота текущей колонны превышает максимальную высоту колонны, добавить блок уже в новую колонну
 		if (currentStackHeight > stackMaxHeight)
 		{
 			//один блок в новой колонне даст высоту 1 и увеличит ширину
@@ -182,7 +184,4 @@ public class FarmerInventory : MonoBehaviour
 	{
 		isSelling = false;
 	}
-
-	
-
 }

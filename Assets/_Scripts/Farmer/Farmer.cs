@@ -1,32 +1,22 @@
-using System;
 using UnityEngine;
 using static EventsNamespace.EventBus;
 
 public class Farmer : MonoBehaviour
 {
 	public float attackTime;
-	public int moneyCount;
-
 
     private bool isAttacking = false;
 	private float remainingAttackTime;
 	private FarmerController farmerController;
 
-
 	private void OnEnable()
 	{
 		onWheatFound += OnWheatFound;
-
-		onAttackStart += AttackStart;
-		onAttackStop += AttackStop;
 	}
 
 	private void OnDisable()
 	{
 		onWheatFound -= OnWheatFound;
-
-		onAttackStart -= AttackStart;
-		onAttackStop -= AttackStop;
 	}
 
 	void Start()
@@ -61,14 +51,5 @@ public class Farmer : MonoBehaviour
 
 			onAttackStart?.Invoke();
 		}
-	}
-
-	public void AttackStart()
-	{
-
-	}
-	public void AttackStop()
-	{
-
 	}
 }

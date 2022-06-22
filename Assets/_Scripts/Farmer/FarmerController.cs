@@ -7,7 +7,7 @@ public class FarmerController : MonoBehaviour
 
     [SerializeField] private Joystick joystick;
     private CharacterController characterController;
-    public bool joystickIsActive;
+    [HideInInspector] public bool joystickIsActive;
     private Vector3 moveDirection;
 
 	private void Start()
